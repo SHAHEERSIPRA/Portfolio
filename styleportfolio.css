@@ -1,0 +1,328 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #161e25;
+    color: #333;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50; /* Same color for nav and footer */
+    padding: 25px 50px;
+    color: white;
+}
+
+nav .left h1 {
+    font-size: 24px;
+}
+
+nav .right ul {
+    list-style: none;
+    display: flex;
+}
+
+nav .right ul li {
+    margin-left: 20px;
+}
+
+nav .right ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover and active state for navigation */
+nav .right ul li a:hover {
+    background-color: #34495e;
+    transform: scale(1.1);
+}
+
+nav .right ul li a.active {
+    background-color: #687d92;
+    font-weight: bold;
+}
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 70px);
+}
+
+.left-content {
+    margin-right: 70px;
+    max-width: 600px;
+}
+
+.right-content img {
+    width: 400px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+    margin-left: 90px;
+}
+
+.me {
+    font-size: larger;
+    color: white;
+}
+
+/* Responsive design */
+@media screen and (max-width: 1024px) {
+    nav {
+        padding: 15px 30px;
+    }
+    
+    nav .left h1 {
+        font-size: 20px;
+    }
+
+    nav .right ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .right ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .left-content {
+        margin: 0;
+        text-align: center;
+    }
+
+    .right-content {
+        margin-top: 20px;
+    }
+    
+    .right-content img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .experience, .education {
+        width: 90%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons a {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-container {
+        padding: 20px;
+    }
+
+    .contact-form-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .contact h2 {
+        font-size: 24px;
+    }
+
+    .contact input[type="text"],
+    .contact input[type="email"] {
+        font-size: 14px;
+    }
+
+    .contact button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    nav .right ul li a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Experience and Education sections */
+.experience, .education {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid white;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.experience h2, .education h2 {
+    font-size: 28px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.experience p, .education p {
+    font-size: 18px;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #f4f4f4;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2c3e50;
+    padding: 40px 0; /* Increased padding */
+    text-align: center;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    margin-bottom: 20px; /* Increased space between icons and content */
+}
+
+.social-icons a {
+    margin: 0 15px; /* Added space between the icons */
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.contact-info {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.contact-info a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Style for Download Resume button */
+.download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Style for the Contact page */
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    padding: 40px;
+    background-color: #161e25;
+}
+
+.contact-form-container {
+    background-color: #2c3e50;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.contact .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.contact label {
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.contact input[type="text"],
+.contact input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+#formMessage {
+    margin-top: 10px;
+    font-size: 16px;
+}

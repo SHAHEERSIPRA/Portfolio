@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleportfolio.css">
+    <link rel="icon" href="img/web development.png">
+    <title>About Shaheer</title>
+</head>
+<body id="about">
+    <nav>
+        <div class="left">
+            <h1>Shaheer's Portfolio</h1>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about" class="main-content">
+        <div class="left-content">
+            <p class="me">
+                Hello, I'm <span style="color: #687d92; font-weight: bold;">SHAHEER</span>. <br>
+                I am a passionate Web Developer with a knack for creating dynamic and efficient web solutions.
+                With my technical skills and problem-solving mindset, I strive to deliver quality work.
+                I did Bachelor of Science in <span style="color: #687d92; font-weight: bold;">Software Engineering </span> from Goverment College University Faisalabad with  <span style="color: #687d92; font-weight: bold;">2.83 CGPA.</span>
+            </p>
+            <!-- Download Resume Button -->
+            <a href="resume.pdf" download="Shaheer_Resume" class="download-btn">Download Resume</a>
+        </div>
+        <div class="right-content">
+            <img src="img/me-removebg-preview.png" alt="developer">
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/shaheerjutt?igsh=NnRiM2V5bWxqa3l6" target="_blank">
+                    <img src="img/icons8-insta-48.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/shaheerjutt25?mibextid=ZbWKwL" target="_blank">
+                    <img src="img/icons8-facebook-48.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/muhammad-shaheer-asghar-4263982aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                    <img src="img/icons8-linkedin-48.png" alt="LinkedIn">
+                </a>
+            </div>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:atifj0800@gmail.com">atifj0800@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>    
+</body>
+</html>

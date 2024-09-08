@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleportfolio.css">
+    <link rel="icon" href="img/web development.png">
+    <title>Contact Shaheer</title>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <h1>Shaheer's Portfolio</h1>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="contact" class="contact">
+        <div class="contact-form-container">
+            <h2>Contact Me</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your E-mail" required>
+                </div>
+                <button type="submit">Submit</button>
+                <p id="formMessage"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="https://www.instagram.com/shaheerjutt?igsh=NnRiM2V5bWxqa3l6" target="_blank">
+                    <img src="img/icons8-insta-48.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/shaheerjutt25?mibextid=ZbWKwL" target="_blank">
+                    <img src="img/icons8-facebook-48.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/in/muhammad-shaheer-asghar-4263982aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                    <img src="img/icons8-linkedin-48.png" alt="LinkedIn">
+                </a>
+            </div>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:atifj0800@gmail.com">atifj0800@gmail.com</a></p>
+            </div>
+        </div>
+    </footer> <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!name || !email) {
+                    formMessage.textContent = 'Please fill out all fields.';
+                    formMessage.style.color = 'white';
+                } else if (!emailPattern.test(email)) {
+                    formMessage.textContent = 'Please enter a valid email address.';
+                    formMessage.style.color = 'white';
+                } else {
+                    formMessage.textContent = 'Thank you for your message!';
+                    formMessage.style.color = 'green';
+                    form.reset(); // Reset the form
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
